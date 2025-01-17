@@ -16,7 +16,6 @@ It works like this:
 
 Alternatively, you can still use the old method from mokuro 0.1.*:
 Instead of a .mokuro file, generate an HTML file, which you can open in a browser.
-You can transfer the resulting HTML file together with manga images to another device (e.g. your mobile phone) and read there.
 This method is still supported for backward compatibility, but it is recommended to use the new .mokuro format and the web reader.
 For details, see [Legacy HTML vs. new .mokuro format](#legacy-html-vs-new-mokuro-format).
 
@@ -43,41 +42,36 @@ try installing Python from the [official site](https://www.python.org/downloads)
 If you want to run with GPU, install PyTorch as described [here](https://pytorch.org/get-started/locally/#start-locally),
 otherwise this step can be skipped.
 
-Run in command line:
+To install:
+
+Download the latest Mokuro release, extract it, open the command line in the extracted directory and then run in command line:
 
 ```commandline
-pip3 install mokuro
+pip install .
 ```
 
 # Usage
 
-## Run on one volume
+## Run on individual volumes
 
 ```bash
-mokuro /path/to/manga/vol1
+mokuro "/path/to/manga/vol1"
 ```
 
-This will generate `/path/to/manga/vol1.html` file, which you can open in a browser.
+This will generate `/path/to/manga/vol1.mokuro` file, which you can open in a browser.
 
-If your path contains spaces, enclose it in double quotes, like this:
-
+You can also run mokuro multiple individual volumes like this: 
 ```bash
-mokuro "/path/to/manga/volume 1"
+mokuro "/path/to/manga/vol1" "/path/to/manga/vol2" "/path/to/manga/vol3"
 ```
 
-## Run on multiple volumes
-
-```bash
-mokuro /path/to/manga/vol1 /path/to/manga/vol2 /path/to/manga/vol3
-```
-
-For each volume, a separate HTML file will be generated.
+For each volume, a separate mokuro file will be generated.
 
 ## Run on a directory containing multiple volumes
 
 If your directory structure looks somewhat like this:
 ```
-manga_title/
+manga/
 ├─vol1/
 ├─vol2/
 ├─vol3/
@@ -87,7 +81,7 @@ manga_title/
 You can process all volumes by running:
 
 ```bash
-mokuro --parent_dir manga_title/
+mokuro --parent_dir "/path/to/manga/"
 ```
 
 ## Other options
@@ -100,7 +94,7 @@ mokuro --parent_dir manga_title/
 --ignore_errors: Continue processing volumes even if an error occurs.
 --no_cache: Do not use cached OCR results from previous runs (_ocr directories).
 --unzip: Extract volumes in zip/cbz format in their original location.
---disable_html: Disable legacy HTML output. If True, acts as if --unzip is True.
+--legacy_html: Enable legacy HTML output.
 --as_one_file: Applies only to legacy HTML. If False, generate separate CSS and JS files instead of embedding them in the HTML file.
 --version: Print the version of mokuro and exit.
 ```
