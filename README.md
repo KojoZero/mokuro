@@ -22,7 +22,7 @@ For details, see [Legacy HTML vs. new .mokuro format](#legacy-html-vs-new-mokuro
 mokuro uses [comic-text-detector](https://github.com/dmMaze/comic-text-detector) for text detection
 and [manga-ocr](https://github.com/kha-white/manga-ocr) for OCR.
 
-Try running on your manga in Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/KojoZero/mokuro/blob/master/notebooks/mokuro_colab.ipynb)
+Try running online with Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/KojoZero/mokuro/blob/master/notebooks/mokuro_colab.ipynb)
 
 See also:
 - [mokuro-reader](https://github.com/ZXY101/mokuro-reader), a web reader for mokuro, developed by ZXY101
@@ -31,16 +31,8 @@ See also:
 
 # Installation
 
-You need Python 3.6 or newer. Please note, that the newest Python release might not be supported due to a PyTorch dependency, 
-which often breaks with new Python releases and needs some time to catch up.
-Refer to [PyTorch website](https://pytorch.org/get-started/locally/) for a list of supported Python versions.
+You need Python 3.6 or newer. Refer to [PyTorch website](https://pytorch.org/get-started/locally/) for a list of supported Python versions.
 
-Some users have reported problems with Python installed from Microsoft Store. If you see an error:
-`ImportError: DLL load failed while importing fugashi: The specified module could not be found.`,
-try installing Python from the [official site](https://www.python.org/downloads).
-
-If you want to run with GPU, install PyTorch as described [here](https://pytorch.org/get-started/locally/#start-locally),
-otherwise this step can be skipped.
 
 To install:
 
@@ -49,6 +41,25 @@ Download the latest Mokuro release, extract it, open the command line in the ext
 ```commandline
 pip install .
 ```
+
+If you want to run with GPU:
+Install Pytorch [here](https://developer.nvidia.com/cuda-toolkit-archive), choose a CUDA version, and run the command it gives you in the command line.
+Next, download the [Cuda Toolkit](https://developer.nvidia.com/cuda-toolkit-archive) version that matches the CUDA version you chose for PyTorch.
+
+
+In a new commandline try running Mokuro.
+If there is an error or it's not working properly, run the command below to uninstall the PyTorch packages and rerun the command used earlier to install PyTorch.
+
+
+```
+pip uninstall torch torchvision torchaudio
+```
+
+
+Some users have reported problems with Python installed from Microsoft Store. If you see an error:
+`ImportError: DLL load failed while importing fugashi: The specified module could not be found.`,
+try installing Python from the [official site](https://www.python.org/downloads).
+
 
 # Usage
 
