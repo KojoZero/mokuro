@@ -42,18 +42,13 @@ Download the latest Mokuro release, extract it, open the command line in the ext
 pip install .
 ```
 
-If you want to run with GPU:
-Install Pytorch [here](https://developer.nvidia.com/cuda-toolkit-archive), choose a CUDA version, and run the command it gives you in the command line.
-Next, download the [Cuda Toolkit](https://developer.nvidia.com/cuda-toolkit-archive) version that matches the CUDA version you chose for PyTorch.
-
-
-In a new commandline try running Mokuro.
-If there is an error or it's not working properly, run the command below to uninstall the PyTorch packages and rerun the command used earlier to install PyTorch.
-
-
+If you want to run with GPU: Uninstall previously installed dependencies with the command below
 ```
 pip uninstall torch torchvision torchaudio
 ```
+
+Then: Install Pytorch [here](https://developer.nvidia.com/cuda-toolkit-archive), choose a CUDA version, and run the command it gives you in the command line.
+Next, download the [Cuda Toolkit](https://developer.nvidia.com/cuda-toolkit-archive) version that matches the CUDA version you chose for PyTorch
 
 
 Some users have reported problems with Python installed from Microsoft Store. If you see an error:
